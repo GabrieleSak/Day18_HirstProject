@@ -33,21 +33,17 @@ screen = Screen()
 screen.colormode(255)
 
 tim.penup()
-tim.goto(-250,-250)
-for __ in range(10):
+tim.goto(-250, -250)
 
+for __ in range(10):
     for _ in range(10):
-        # tim.pendown()
         tim.dot(20, choice(color_list))
-        # tim.penup()
         tim.forward(50)
-    print(f"heading {tim.heading()}")
-    print(f"position {tim.pos()}")
     position_x = tim.pos()[0]
     position_y = tim.pos()[1]
     if tim.heading() == 0:
         tim.setheading(180)
-        tim.goto(position_x -50, position_y + 50)
+        tim.goto(position_x - 50, position_y + 50)
     else:
         tim.setheading(0)
         tim.goto(position_x + 50, position_y + 50)
